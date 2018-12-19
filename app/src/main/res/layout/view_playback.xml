@@ -1,0 +1,123 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/playback_container"
+    android:layout_width="match_parent"
+    android:layout_height="125dp"
+    android:layout_alignParentBottom="true"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/colorPrimary" />
+
+    <LinearLayout
+        android:id="@+id/track_details_container"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <TextView
+            android:id="@+id/tv_track_name"
+            style="@style/PlayBackTextAppearance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_weight="80"
+            android:lines="1"
+            android:maxLines="1"
+            android:textColor="@color/colorWhite"
+            tools:text="Akon - Beautiful" />
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/indicator_playing"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:indicatorColor="@color/colorWhite"
+            app:indicatorName="LineScalePulseOutIndicator"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_track_duration"
+            style="@style/PlayBackTextAppearance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_weight="20"
+            android:gravity="end"
+            android:lines="1"
+            android:maxLines="1"
+            android:textColor="@color/colorWhite"
+            tools:text="00:45" />
+
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/sb_track"
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/colorWhite"
+        android:max="100"
+        android:progress="0"
+        android:progressBackgroundTint="@color/colorWhite"
+        tools:progress="50" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <ImageView
+            android:id="@+id/iv_previous"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:contentDescription="@string/app_name"
+            android:padding="8dp"
+            android:src="@drawable/ic_skip_previous_white" />
+
+        <ImageView
+            android:id="@+id/iv_stop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:contentDescription="@string/app_name"
+            android:padding="8dp"
+            android:src="@drawable/ic_stop_white" />
+
+        <ImageView
+            android:id="@+id/iv_play_pause"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:contentDescription="@string/app_name"
+            android:padding="8dp"
+            android:src="@drawable/ic_play_white" />
+
+        <ImageView
+            android:id="@+id/iv_next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:contentDescription="@string/app_name"
+            android:padding="8dp"
+            android:src="@drawable/ic_skip_next_white" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

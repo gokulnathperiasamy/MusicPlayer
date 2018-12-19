@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+apply plugin: 'de.felixschulze.gradle.hockeyapp'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.kpgn.musicplayersample"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 11
+        versionName "1.0"
+        setProperty("archivesBaseName", "MusicPlayer")
+    }
+    signingConfigs {
+        release {
+            storeFile file("../play/keystore_music_player.jks")
+            storePassword 'Mu$!cPl@y3r2018'
+            keyAlias 'MusicPlayer'
+            keyPassword 'Mu$!cPl@y3r2018'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    def date = new Date();
+                    def formattedDate = date.format('ddMMyyyy_HHmm')
+                    outputFileName = "MusicPlayer" + "_${variant.name}_v${variant.versionName}_d" + formattedDate + ".apk"
+                }
+            }
+        }
+    }
+    flavorDimensions "variants"
+    productFlavors {
+        ProdConfig {
+            dimension "variants"
+        }
+        DevConfig {
+            dimension "variants"
+        }
+    }
+}
+
+hockeyapp {
+    apiToken = "f4fa709587dd4e1dbb6be465cd75747a"
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.wang.avi:library:2.1.3'
+}

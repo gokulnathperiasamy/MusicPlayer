@@ -1,0 +1,148 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/playback_container"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true"
+    android:layout_weight="30"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:visibility="gone"
+    tools:layout_width="match_parent"
+    tools:visibility="visible">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/tv_track_name"
+        style="@style/PlayBackTextAppearance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:lines="1"
+        android:maxLines="1"
+        android:textColor="@color/colorWhite"
+        tools:text="Akon - Beautiful - Song" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp" />
+
+    <LinearLayout
+        android:id="@+id/track_details_container"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/indicator_playing"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:visibility="gone"
+            app:indicatorColor="@color/colorWhite"
+            app:indicatorName="LineScalePulseOutIndicator"
+            tools:visibility="visible" />
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_track_duration"
+            style="@style/PlayBackTextAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:lines="1"
+            android:maxLines="1"
+            android:textColor="@color/colorWhite"
+            tools:text="00:45" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp" />
+
+    <SeekBar
+        android:id="@+id/sb_track"
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/colorWhite"
+        android:max="100"
+        android:progress="0"
+        android:progressBackgroundTint="@color/colorWhite"
+        tools:progress="50" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <ImageView
+            android:id="@+id/iv_play_pause"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:contentDescription="@string/app_name"
+            android:padding="8dp"
+            android:src="@drawable/ic_play_white" />
+
+        <ImageView
+            android:id="@+id/iv_stop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:contentDescription="@string/app_name"
+            android:padding="8dp"
+            android:src="@drawable/ic_stop_white" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <ImageView
+            android:id="@+id/iv_previous"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:contentDescription="@string/app_name"
+            android:padding="8dp"
+            android:src="@drawable/ic_skip_previous_white" />
+
+        <ImageView
+            android:id="@+id/iv_next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:contentDescription="@string/app_name"
+            android:padding="8dp"
+            android:src="@drawable/ic_skip_next_white" />
+
+    </LinearLayout>
+
+</LinearLayout>

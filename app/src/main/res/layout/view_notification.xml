@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/playback_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorDeactivated"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:visibility="visible"
+    android:weightSum="100">
+
+    <TextView
+        android:id="@+id/tv_track_name"
+        style="@style/PlayBackTextAppearance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="60"
+        android:lines="1"
+        android:maxLines="1"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="Akon - Beautiful" />
+
+    <ImageView
+        android:id="@+id/iv_previous"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="13"
+        android:contentDescription="@string/app_name"
+        android:padding="8dp"
+        android:src="@drawable/ic_skip_previous" />
+
+    <ImageView
+        android:id="@+id/iv_stop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="13"
+        android:contentDescription="@string/app_name"
+        android:padding="8dp"
+        android:src="@drawable/ic_stop" />
+
+    <ImageView
+        android:id="@+id/iv_next"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="13"
+        android:contentDescription="@string/app_name"
+        android:padding="8dp"
+        android:src="@drawable/ic_skip_next" />
+
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/song_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorDeactivated"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <TextView
+            android:id="@+id/tv_song_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="85"
+            android:drawableLeft="@drawable/ic_music_logo"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:padding="8dp"
+            tools:text="CEO In The House" />
+
+        <TextView
+            android:id="@+id/tv_song_duration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="15"
+            android:gravity="end"
+            android:maxLines="1"
+            android:paddingEnd="12dp"
+            android:paddingRight="12dp"
+            tools:text="00:50" />
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/colorPrimary" />
+
+</LinearLayout>

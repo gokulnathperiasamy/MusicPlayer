@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Music Player</string>
+
+    <string name="empty_list">Nothing!\n\nYour collection list is empty!</string>
+    <string name="need_permission">Need Permission To Access Songs!</string>
+    <string name="grant_permission">Grant Permission</string>
+</resources>
